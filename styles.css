@@ -8,6 +8,11 @@
     src: url(./resources/fonts/PlaypenSans-VariableFont_wght.ttf);
 }
 
+@font-face {
+    font-family: GreatVibesFont;
+    src: url(./resources/fonts/GreatVibes-Regular.ttf);
+}
+
 :root {
     --color-50: #fef2f2;
     --color-100: #fee2e2;
@@ -35,7 +40,7 @@ body {
 .bodyContainer {
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: max-content auto;
 }
 
 header {
@@ -97,7 +102,99 @@ header>button {
     top: 5%; */
 }
 
+header>button:hover {
+    background-color: var(--color-950);
+}
+
 header>button>svg {
     width: 1.2rem;
     fill: var(--color-100);
+}
+
+main {
+    background-color: var(--color-950);
+    margin: 3vw;
+    border-radius: 1.5vw;
+    box-sizing: border-box;
+}
+
+main>form {
+    display: none;
+}
+
+main > .bookContainer {
+    margin: 4vw;
+    height: calc(100% - 8vw);
+    width: calc(100% - 8vw);
+
+    border-radius: 1.5vw;
+    background-color: var(--color-50);
+    background-image: url(./resources/images/jess-bailey-cYUXaclEMLY-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 25rem);
+    justify-content: center;
+}
+
+.bookContainer>.card {
+    background-color: var(--color-700);
+    margin: 3vw;
+    /* padding: 2vw; */
+    border-radius: 25% 10%;
+    border: solid var(--color-950);
+    box-shadow: 0 0 2px var(--color-950);
+    text-align: center;
+    color: var(--color-100);
+    font-family: GreatVibesFont, 'Courier New', Courier, monospace;
+
+    display: grid;
+    grid-template-rows: auto max-content;
+}
+
+.card>.info>h2 {
+    font-family: PlaypenFont, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 300;
+}
+
+.card>.info>h3 {
+    font-family: JosefinFont, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    /* font-weight: 300; */
+}
+
+.card>.buttons {
+    /* background-color: var(--color-300); */
+    /* align-self: stretch; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons>button {
+    height: 2.5rem;
+    width: clamp(3rem, calc(2rem + 20vw), 12rem);
+    margin: 0.5rem;
+    border-radius: 2rem;
+    border: solid var(--color-950);
+    font-family: JosefinFont, 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 1rem;
+    background-color: var(--color-950);
+    color: var(--color-50);
+
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; */
+}
+
+.buttons>button>svg {
+    width: 1.3rem;
+    fill: var(--color-50);
+}
+
+.buttons>button:hover {
+    outline: solid var(--color-100);
 }
