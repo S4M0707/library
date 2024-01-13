@@ -30,17 +30,6 @@ function changeReadStatus(index) {
     myLibrary[index].hasRead = !myLibrary[index].hasRead;
 }
 
-function displayForm() {
-    document.getElementById('formContainer').style.display = 'block';
-    document.getElementById('overlay').style.display = 'block';
-}
-
-function hideForm() {
-    document.getElementById('formContainer').style.display = 'none';
-    document.getElementById('overlay').style.display = 'none';
-    document.getElementById('addBookForm').reset();
-}
-
 function displayBook() {
     const bookContainer = document.getElementById('bookContainer');
     bookContainer.innerHTML = '';
@@ -78,6 +67,17 @@ function displayBook() {
             displayBook();
         });
     }
+}
+
+const dialog = document.querySelector("dialog");
+
+function displayForm() {
+    dialog.showModal();
+}
+
+function hideForm() {
+    dialog.close();
+    document.getElementById('addBookForm').reset();
 }
 
 const addBookBtn = document.getElementById('addBookBtn');
