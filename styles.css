@@ -339,11 +339,6 @@ main>#bookContainer {
     background-color: rgb(0, 100, 0);
 }
 
-.card>.buttons>button>svg {
-    width: 1.3rem;
-    fill: var(--color-50);
-}
-
 .card>.buttons>button:hover {
     outline: solid var(--color-100);
 }
